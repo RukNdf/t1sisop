@@ -3,7 +3,7 @@ import BaseHTTPServer
 import cpustat
 
 
-HOST_NAME = '0.0.0.0' # !!!REMEMBER TO CHANGE THIS!!!
+HOST_NAME = '0.0.0.0' 
 PORT_NUMBER = 8000
 cpul = cpustat.GetCpuLoad()
 
@@ -28,7 +28,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         s.send_response(200)
         s.send_header("Content-type", "text/html")
         s.end_headers()
-        s.wfile.write("<html><head><title>Title goes here.</title></head>")
+        s.wfile.write("<html><head><title>Server status</title></head>")
         s.wfile.write("<body><p>This is a test.</p>")
         s.wfile.write("<body><p>Time "+time.ctime(time.time())+".</p>")
         s.wfile.write("<body><p>uptime"+miltoS(get_uptime())+".</p>")	
